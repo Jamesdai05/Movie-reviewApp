@@ -3,10 +3,11 @@ import Header from "./components/Header";
 import { useState, useEffect } from "react";
 import MovieForm from "./components/MovieForm";
 import MovieDisplay from "./components/MovieDisplay";
+import Moviepage from "./components/Moviepage";
 
 function App() {
   const [movieName, setMovieName] = useState("");
-  const [movieData, setMovieData] = useState(null);
+  const [movies, setMovies] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
 
   const onSubmit = (movieName) => {
@@ -20,7 +21,7 @@ function App() {
       setMovieName(movieName);
       setErrorMessage("");
     }
-    setMovieData(null);
+    setMovies(null);
   };
 
   useEffect(() => {
@@ -30,7 +31,7 @@ function App() {
       fetch(url)
         .then((res) => res.json())
         .then((data) => {
-          setMovieData(data);
+          setMovies(data);
         });
     };
     if (movieName !== "") makeApiCall();
@@ -42,7 +43,7 @@ function App() {
       <div className="movie">
         <h1>My Movie App</h1>
         <MovieForm onSubmit={onSubmit} />
-        <MovieDisplay movieData={movieData} movieName={movieName} />
+        <Moviepage movies={movies} />
       </div>
     </div>
   );
