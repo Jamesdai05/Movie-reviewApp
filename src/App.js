@@ -4,6 +4,11 @@ import { useState, useEffect } from "react";
 // import MovieForm from "./components/MovieForm";
 // import MovieDisplay from "./components/MovieDisplay";
 import Moviepage from "./components/Moviepage";
+import MovieCard from "./components/MovieCard";
+import data from "./components/data";
+
+const url =
+  "https://api.themoviedb.org/3/movie/popular?api_key=994bc6246884ded0516faec02291bfa2";
 
 function App() {
   const [movieName, setMovieName] = useState("");
@@ -33,14 +38,7 @@ function App() {
   //   console.log(data);
   // };
 
-  // useEffect(() => {
-  //   if (movieName !== "") getMovieRequest();
-  // }, [movieName]);
-
   useEffect(() => {
-    // const url = `http://www.omdbapi.com/?i={movieName}&apikey=91cda3b7`;
-    const url = "http://www.omdbapi.com/?s=avengers&type=movie&apikey=91cda3b7";
-
     const makeApiCall = () => {
       fetch(url)
         .then((res) => res.json())
@@ -48,8 +46,27 @@ function App() {
           setMovies(data);
         });
     };
-    if (movieName !== "") makeApiCall();
-  }, [movieName]);
+  }, []);
+
+  // useEffect(() => {
+  //   if (movieName !== "") getMovieRequest();
+  // }, [movieName]);
+  /////////////////////////////////////////////below is the code from course material.
+  // useEffect(() => {
+  //   // const url = `http://www.omdbapi.com/?i={movieName}&apikey=91cda3b7`;
+  //   const url = "http://www.omdbapi.com/?s=avengers&type=movie&apikey=91cda3b7";
+
+  //   const makeApiCall = () => {
+  //     fetch(url)
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         setMovies(data);
+  //       });
+  //   };
+  //   if (movieName !== "") makeApiCall();
+  // }, [movieName]);
+
+  const cards = data.map((movieReq) => <MovieCard />);
   return (
     <div className="App">
       <Header />
@@ -57,7 +74,7 @@ function App() {
       <div className="movie">
         <h1>My Movie App</h1>
         {/* <MovieForm onSubmit={onSubmit} /> */}
-        <Moviepage movies={movies} />
+        <Moviepage movies={cards} />
       </div>
     </div>
   );
