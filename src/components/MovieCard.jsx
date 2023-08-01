@@ -1,11 +1,20 @@
-const MovieCard = () => {
+const api_img = "https://image.tmdb.org/t/p/w500";
+
+const MovieCard = ({
+  title,
+  vote_average,
+  overview,
+  release_date,
+  poster_path,
+}) => {
   return (
     <div>
-      <h2>Movies Info</h2>
-      <img
-        src="https://th.bing.com/th/id/R.ab9af414e79bbd785e5ff1c446a42786?rik=X5%2fC2DD1yN5XiQ&riu=http%3a%2f%2fallhdwallpapers.com%2fwp-content%2fuploads%2f2015%2f04%2fbatman-2.jpg&ehk=8gZQi9N9pyhtSHoLmU0K19NoM7mYG%2fwQqds%2f%2fGg7Egk%3d&risl=&pid=ImgRaw&r=0"
-        alt="movie"
-      />
+      <h2>{title}</h2>
+      <img src={api_img + poster_path} alt="movie" />
+      <p>{overview}</p>
+      <p>
+        <span>{release_date}</span>
+      </p>
     </div>
   );
 };

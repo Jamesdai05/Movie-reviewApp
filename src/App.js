@@ -37,7 +37,7 @@ function App() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        // setMovies(data.results);
+        setMovies(data.results);
       });
   };
 
@@ -63,7 +63,16 @@ function App() {
   //   if (movieName !== "") makeApiCall();
   // }, [movieName]);
 
-  const cards = data.map((movie, i) => <MovieCard key={i} />);
+  const cards = movies.map((movie) => (
+    <MovieCard
+      key={movie.id}
+      posterPath={movie.poster_path}
+      title={movie.title}
+      overview={movie.overview}
+      release_date={movie.release_date}
+      vote_average={movie.vote_average}
+    />
+  ));
   return (
     <div className="App">
       <Header />
