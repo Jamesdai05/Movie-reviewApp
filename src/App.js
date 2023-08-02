@@ -6,7 +6,6 @@ import { useState, useEffect } from "react";
 
 // import Moviepage from "./components/Moviepage";
 import MovieCard from "./components/MovieCard";
-import data from "./components/data";
 
 const url =
   "https://api.themoviedb.org/3/movie/popular?api_key=994bc6246884ded0516faec02291bfa2";
@@ -43,7 +42,6 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {/* <Moviepage moviedata={moviedata} movietitle={movietitle} /> */}
       <div className="movie">
         <h1>My Movie App</h1>
         {/* <MovieForm onSubmit={onSubmit} /> */}
