@@ -1,11 +1,11 @@
 import Navbar from "./Navbar";
-import Filterbar from "./Filterbar";
+import SearchBar from "./SearchBar";
 
 const Header = () => {
   return (
     <div className="Header">
       <Navbar />
-      <Filterbar />
+      <SearchBar />
     </div>
   );
 };

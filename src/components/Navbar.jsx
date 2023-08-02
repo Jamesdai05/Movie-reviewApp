@@ -4,7 +4,7 @@ const Navbar = () => {
       <ul>
         <li>Home</li>
         <li>My Favourite</li>
-        <li>Wishlist</li>
+        <li>Gre</li>
         <li>Review</li>
       </ul>
     </div>
