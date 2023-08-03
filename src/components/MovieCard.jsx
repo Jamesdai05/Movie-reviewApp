@@ -20,18 +20,23 @@ const MovieCard = (props) => {
             </Button>
             <Modal show={show} onHide={handleClose}>
               <Modal.Header closeButton>
-                <Modal.Title>{props.title}</Modal.Title>
+                <Modal.Title>
+                  <h3>{props.title}</h3>
+                </Modal.Title>
               </Modal.Header>
               <Modal.Body>
                 <img src={api_img + props.poster} alt="movie" />
+                <h4>IMDB:{props.vote_average}</h4>
+                <h5>Release-Date: {props.release_date}</h5>
+                <br></br>
                 <div className="description">{props.overview}</div>
               </Modal.Body>
               <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
+                <Button variant="primary" onClick={handleClose}>
                   Close
                 </Button>
                 <Button variant="primary" onClick={handleClose}>
-                  Save Changes
+                  Add to Favourite
                 </Button>
               </Modal.Footer>
             </Modal>
