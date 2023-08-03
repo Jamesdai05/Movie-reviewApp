@@ -14,7 +14,7 @@ body {
 
 .container {
   width: 100%;
-  margin: 1em auto;
+  margin: 0.3em 1em;
   background-color: darkgray;
 }
 
@@ -23,5 +23,17 @@ body {
   margin-left: 0.5px;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 0.2em;
+  /* justify-content: space-evenly; */
+}
+
+/* .gird {
+  display: flex;
+  flex-flow: column;
   justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+} */
+
+img {
+  height: 20em;
 }

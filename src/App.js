@@ -45,9 +45,8 @@ function App() {
       <Header />
       <div className="container">
         <div className="grid">
-          <h1>Popular</h1>
           {/* <MovieForm onSubmit={onSubmit} /> */}
-          <section className="cards">{cards}</section>
+          {cards}
         </div>
       </div>
     </div>
