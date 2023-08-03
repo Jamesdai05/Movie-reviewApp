@@ -43,7 +43,7 @@ function App() {
     <div className="App">
       <Header />
       <div className="movie">
-        <h1>My Movie App</h1>
+        <h1>Popular</h1>
         {/* <MovieForm onSubmit={onSubmit} /> */}
         <section className="cards">{cards}</section>
       </div>
