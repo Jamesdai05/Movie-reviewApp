@@ -8,13 +8,11 @@ body {
   text-decoration: none;
   list-style-type: none;
   outline: none;
-  color: aqua;
-  /* background-image: url("../public/background.jpg"); */
 }
 
 .container {
   width: 100%;
-  margin: 0.3em 1em;
+  margin: 0.3em 0.3em;
   background-color: darkgray;
 }
 
@@ -23,5 +21,5 @@ body {
   margin-left: 0.5px;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 0.2em;
-  /* justify-content: space-evenly; */
+  justify-content: center;
 }

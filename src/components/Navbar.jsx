@@ -1,16 +1,9 @@
-import About from "./components/About";
 import Popular from "./components/Popular";
 import Result from "./components/Result";
 import Home from "./components/Home";
+import Favourite from "./components/Favourite";
 
-import {
-  Navbar,
-  Nav,
-  NavDropdown,
-  Form,
-  Button,
-  Container,
-} from "react-bootstrap";
+import { Navbar, Nav, Form, Button, Container } from "react-bootstrap";
 import { Routes, Route, Link } from "react-router-dom";
 
 const NavBar = () => {
@@ -38,18 +31,12 @@ const NavBar = () => {
                 <Nav.Link as={Link} to={"/popular"} element={<Popular />}>
                   Popular
                 </Nav.Link>
-                <NavDropdown title="Favourite" id="navbarScrollingDropdown">
-                  <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">Comedy</NavDropdown.Item>
-                  <NavDropdown.Item href="#action6">Thriller</NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action5">Top Rated</NavDropdown.Item>
-                </NavDropdown>
+
                 <Nav.Link as={Link} to={"/result"} element={<Result />}>
                   Result
                 </Nav.Link>
-                <Nav.Link as={Link} to={"/about"} element={<About />}>
-                  About
+                <Nav.Link as={Link} to={"/Favourite"} element={<Favourite />}>
+                  Favourite
                 </Nav.Link>
               </Nav>
               <Form className="d-flex">
@@ -68,9 +55,9 @@ const NavBar = () => {
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
           <Route path="/result" element={<Result />} />
           <Route path="/popular" element={<Popular />} />
+          <Route path="/Favourite" element={<Favourite />} />
         </Routes>
       </div>
     </>

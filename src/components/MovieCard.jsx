@@ -13,7 +13,8 @@ const MovieCard = (props) => {
     <div className="text-center card bg-secondary mb-3">
       <div className="card-body">
         <div className="card-img-top">
-          <img src={api_img + props.poster} alt="movie" />
+          {/* <img className="thumbnail"src={api_img + props.poster} alt="movie" /> */}
+          <img className="thumbnail" src={api_img + props.poster} alt="movie" />
           <div className="card-body">
             <Button variant="dark" onClick={handleShow}>
               View More

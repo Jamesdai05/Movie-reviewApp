@@ -1,10 +1,6 @@
 import "./App.css";
 import Header from "./components/Header";
 import { useState, useEffect } from "react";
-// import MovieForm from "./components/MovieForm";
-// import MovieDisplay from "./components/MovieDisplay";
-
-// import Moviepage from "./components/Moviepage";
 import MovieCard from "./components/MovieCard";
 import "bootstrap/dist/css/bootstrap.min.css";
 
