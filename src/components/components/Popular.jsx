@@ -1,3 +1,5 @@
-import Home from "./Home";
-import Popular from "./Popular";
-import Result from "./Result";
+const Popular = () => {
+  return <h1>This is Popular Page</h1>;
+};
+
+export default Popular;

@@ -1,4 +1,4 @@
-import "./App.css";
+// import "./App.css";
 import Header from "./components/Header";
 import { useState, useEffect } from "react";
 // import MovieForm from "./components/MovieForm";
@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 
 // import Moviepage from "./components/Moviepage";
 import MovieCard from "./components/MovieCard";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const url =
   "https://api.themoviedb.org/3/movie/popular?api_key=994bc6246884ded0516faec02291bfa2";

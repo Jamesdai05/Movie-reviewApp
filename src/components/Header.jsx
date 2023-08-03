@@ -1,11 +1,9 @@
-import Navbar from "./Navbar";
-import SearchBar from "./SearchBar";
+import Navbar from "./components/Navbar";
 
 const Header = () => {
   return (
-    <div className="Header">
+    <div>
       <Navbar />
-      <SearchBar />
     </div>
   );
 };
