@@ -11,8 +11,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const url =
   "https://api.themoviedb.org/3/movie/popular?api_key=994bc6246884ded0516faec02291bfa2";
 
-// const url = "http://www.omdbapi.com/?s=avengers&type=movie&apikey=91cda3b7";
-
 function App() {
   const [movieName, setMovieName] = useState("");
   const [movies, setMovies] = useState([]);

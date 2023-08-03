@@ -25,16 +25,3 @@ body {
   grid-gap: 0.2em;
   /* justify-content: space-evenly; */
 }
-
-/* .gird {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-} */
-
-img {
-  height: 22em;
-  width: 100%;
-}
