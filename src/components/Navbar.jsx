@@ -1,7 +1,7 @@
-import About from "./About";
-import Popular from "./Popular";
-import Result from "./Result";
-import Home from "./Home";
+import About from "./components/About";
+import Popular from "./components/Popular";
+import Result from "./components/Result";
+import Home from "./components/Home";
 
 import {
   Navbar,

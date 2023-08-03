@@ -7,10 +7,6 @@ const MovieCard = (props) => {
       <h2>{props.title}</h2>
       <img src={api_img + props.poster} alt="movie" />
       <p>{props.overview}</p>
-      <p>
-        <span>{props.release_date}</span>
-        <span>{props.vote_average}</span>
-      </p>
     </div>
   );
 };

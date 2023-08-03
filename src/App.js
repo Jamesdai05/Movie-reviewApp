@@ -1,4 +1,4 @@
-// import "./App.css";
+import "./App.css";
 import Header from "./components/Header";
 import { useState, useEffect } from "react";
 // import MovieForm from "./components/MovieForm";
@@ -43,10 +43,12 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <div className="movie">
-        <h1>Popular</h1>
-        {/* <MovieForm onSubmit={onSubmit} /> */}
-        <section className="cards">{cards}</section>
+      <div className="container">
+        <div className="grid">
+          <h1>Popular</h1>
+          {/* <MovieForm onSubmit={onSubmit} /> */}
+          <section className="cards">{cards}</section>
+        </div>
       </div>
     </div>
   );
