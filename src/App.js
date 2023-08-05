@@ -75,10 +75,13 @@ function App() {
         handleSubmit={searchMovies}
       />
       <Main />
-      <div className="container">
-        <div className="grid">{cards}</div>
-        {/* <Favourite favourites={favourites} setFavourites={setFavourites} /> */}
-      </div>
+      {movies.length > 0 ? (
+        <div className="container">
+          <div className="grid">{cards}</div>
+        </div>
+      ) : (
+        <h1>Results are not found!Please check the enter is correct.</h1>
+      )}
     </div>
   );
 }

@@ -4,6 +4,9 @@ import Modal from "react-bootstrap/Modal";
 
 const api_img = "https://image.tmdb.org/t/p/w500";
 
+const imageNotAvailble =
+  "https://www.csaff.org/wp-content/uploads/csaff-no-poster.jpg";
+
 const MovieCard = (props) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -15,7 +18,7 @@ const MovieCard = (props) => {
         <div className="card-img-top">
           <img
             className="thumbnail"
-            src={api_img + props.poster}
+            src={props.poster ? api_img + props.poster : imageNotAvailble}
             alt="movie_poster"
           />
           <div className="card-img-top">
