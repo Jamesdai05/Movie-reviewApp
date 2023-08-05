@@ -7,7 +7,7 @@ import { Navbar, Nav, Form, Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const NavBar = (props) => {
-  console.log(props);
+  // console.log(props);
   return (
     <div>
       <Navbar
@@ -49,7 +49,9 @@ const NavBar = (props) => {
                 value={props.query}
                 onChange={props.handleChange}
               />
-              <Button variant="outline-success">Search</Button>
+              <Button variant="outline-success" type="submit">
+                Search
+              </Button>
             </Form>
           </Navbar.Collapse>
         </Container>

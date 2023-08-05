@@ -37,7 +37,6 @@ const MovieCard = (props) => {
                 />
                 <h4>IMDB:{props.voteAverage}</h4>
                 <h5>Release-Date: {props.releaseDate}</h5>
-                <br></br>
                 <div className="description">{props.overview}</div>
               </Modal.Body>
               <Modal.Footer>
