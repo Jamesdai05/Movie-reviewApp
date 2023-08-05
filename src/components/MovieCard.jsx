@@ -10,12 +10,15 @@ const MovieCard = (props) => {
   const handleShow = () => setShow(true);
 
   return (
-    <div className="text-center card bg-secondary mb-3">
+    <div className="card text-center bg-secondary mb-3">
       <div className="card-body">
         <div className="card-img-top">
-          {/* <img className="thumbnail"src={api_img + props.poster} alt="movie" /> */}
-          <img className="thumbnail" src={api_img + props.poster} alt="movie" />
-          <div className="card-body">
+          <img
+            className="thumbnail"
+            src={api_img + props.poster}
+            alt="movie_poster"
+          />
+          <div className="card-img-top">
             <Button variant="dark" onClick={handleShow}>
               View More
             </Button>
@@ -26,9 +29,14 @@ const MovieCard = (props) => {
                 </Modal.Title>
               </Modal.Header>
               <Modal.Body>
-                <img src={api_img + props.poster} alt="movie" />
-                <h4>IMDB:{props.vote_average}</h4>
-                <h5>Release-Date: {props.release_date}</h5>
+                <img
+                  className="thumbnail"
+                  src={api_img + props.poster}
+                  alt="movie"
+                  style={{ width: "14rem" }}
+                />
+                <h4>IMDB:{props.voteAverage}</h4>
+                <h5>Release-Date: {props.releaseDate}</h5>
                 <br></br>
                 <div className="description">{props.overview}</div>
               </Modal.Body>
