@@ -6,7 +6,8 @@ import Favourite from "./components/Favourite";
 import { Navbar, Nav, Form, Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const NavBar = () => {
+const NavBar = (props) => {
+  console.log(props);
   return (
     <div>
       <Navbar
@@ -44,6 +45,9 @@ const NavBar = () => {
                 placeholder="Enter the movie name"
                 className="me-2"
                 aria-label="Search"
+                name="query"
+                value={props.query}
+                onChange={props.onChange}
               />
               <Button variant="outline-success">Search</Button>
             </Form>

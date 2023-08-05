@@ -1,5 +1,5 @@
 import "./App.css";
-import Header from "./components/Header";
+import Navbar from "./components/Navbar";
 import Main from "./components/Main";
 import { useState, useEffect } from "react";
 import MovieCard from "./components/MovieCard";
@@ -8,9 +8,6 @@ import Favourite from "./components/components/Favourite";
 
 const url =
   "https://api.themoviedb.org/3/movie/popular?api_key=994bc6246884ded0516faec02291bfa2";
-
-const searchUrl =
-  "https://api.themoviedb.org/3/search/movie?query={query}&api_key=994bc6246884ded0516faec02291bfa2";
 
 function App() {
   const [query, setQuery] = useState("");
@@ -30,8 +27,11 @@ function App() {
   useEffect(() => {
     makeApiCall();
   }, []);
-
+  // for search bar
+  const searchUrl =
+    "https://api.themoviedb.org/3/search/movie?query={query}&api_key=994bc6246884ded0516faec02291bfa2";
   const searchMovies = () => {
+    console.log("Searching");
     fetch(searchUrl)
       .then((res) => res.json())
       .the((data) => {
@@ -39,9 +39,18 @@ function App() {
         setMovies(data.results);
       });
   };
-  useEffect(() => {
+  try {
     searchMovies();
-  }, [query]);
+  } catch (e) {
+    console.log(e);
+  }
+
+  const handleChange = (e) => {
+    setQuery(e.target.value);
+  };
+  // useEffect(() => {
+  //   searchMovies();
+  // }, [query]);
 
   const cards = movies.map((element) => (
     <MovieCard
@@ -55,7 +64,7 @@ function App() {
   ));
   return (
     <div className="App">
-      <Header />
+      <Navbar query={query} handleChange={handleChange} />
       <Main />
       <div className="container">
         <div className="grid">{cards}</div>

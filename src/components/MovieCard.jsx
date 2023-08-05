@@ -19,7 +19,7 @@ const MovieCard = (props) => {
             alt="movie_poster"
           />
           <div className="card-img-top">
-            <Button variant="dark" onClick={handleShow}>
+            <Button variant="dark" className="mt-2" onClick={handleShow}>
               View More
             </Button>
             <Modal show={show} onHide={handleClose}>
