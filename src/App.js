@@ -28,7 +28,7 @@ function App() {
     makeApiCall();
   }, []);
   // for search bar
-  const searchUrl = `https://api.themoviedb.org/3/search/movie?query={query}&api_key=994bc6246884ded0516faec02291bfa2;`;
+  const searchUrl = `https://api.themoviedb.org/3/search/movie?query=${query}&api_key=994bc6246884ded0516faec02291bfa2;`;
   const searchMovies = (e) => {
     console.log("Searching");
     e.preventDefault();
