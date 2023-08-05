@@ -77,7 +77,7 @@ function App() {
       <Main />
       <div className="container">
         <div className="grid">{cards}</div>
-        <Favourite favourites={favourites} setFavourites={setFavourites} />
+        {/* <Favourite favourites={favourites} setFavourites={setFavourites} /> */}
       </div>
     </div>
   );
