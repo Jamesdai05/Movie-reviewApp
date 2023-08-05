@@ -28,24 +28,29 @@ function App() {
     makeApiCall();
   }, []);
   // for search bar
-  const searchUrl =
-    "https://api.themoviedb.org/3/search/movie?query={query}&api_key=994bc6246884ded0516faec02291bfa2";
-  const searchMovies = () => {
+  const searchUrl = `https://api.themoviedb.org/3/search/movie?query={query}&api_key=994bc6246884ded0516faec02291bfa2;`;
+  const searchMovies = (e) => {
     console.log("Searching");
-    fetch(searchUrl)
-      .then((res) => res.json())
-      .the((data) => {
-        console.log(data);
-        setMovies(data.results);
-      });
+    e.preventDefault();
+    try {
+      fetch(searchUrl)
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          setMovies(data.results);
+        });
+    } catch (e) {
+      console.log(e);
+    }
   };
-  try {
-    searchMovies();
-  } catch (e) {
-    console.log(e);
-  }
+  // try {
+  //   searchMovies();
+  // } catch (e) {
+  //   console.log(e);
+  // }
 
   const handleChange = (e) => {
+    console.log(e.target.value);
     setQuery(e.target.value);
   };
   // useEffect(() => {
@@ -64,7 +69,11 @@ function App() {
   ));
   return (
     <div className="App">
-      <Navbar query={query} handleChange={handleChange} />
+      <Navbar
+        query={query}
+        handleChange={handleChange}
+        handleSubmit={searchMovies}
+      />
       <Main />
       <div className="container">
         <div className="grid">{cards}</div>

@@ -39,7 +39,7 @@ const NavBar = (props) => {
                 Favourite
               </Nav.Link>
             </Nav>
-            <Form className="d-flex">
+            <Form className="d-flex" onSubmit={props.handleSubmit}>
               <Form.Control
                 type="search"
                 placeholder="Enter the movie name"
