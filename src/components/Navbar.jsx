@@ -47,7 +47,7 @@ const NavBar = (props) => {
                 aria-label="Search"
                 name="query"
                 value={props.query}
-                onChange={props.onChange}
+                onChange={props.handleChange}
               />
               <Button variant="outline-success">Search</Button>
             </Form>
