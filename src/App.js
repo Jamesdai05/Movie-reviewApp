@@ -4,13 +4,19 @@ import Main from "./components/Main";
 import { useState, useEffect } from "react";
 import MovieCard from "./components/MovieCard";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Favourite from "./components/components/Favourite";
 
 const url =
   "https://api.themoviedb.org/3/movie/popular?api_key=994bc6246884ded0516faec02291bfa2";
 
+const searchUrl =
+  "https://api.themoviedb.org/3/search/movie?query={query}&api_key=994bc6246884ded0516faec02291bfa2";
+
 function App() {
-  // const [movieName, setMovieName] = useState("");
+  const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
+
+  const [favourites, setFavourites] = useState([]);
 
   const makeApiCall = () => {
     fetch(url)
@@ -24,6 +30,18 @@ function App() {
   useEffect(() => {
     makeApiCall();
   }, []);
+
+  const searchMovies = () => {
+    fetch(searchUrl)
+      .then((res) => res.json())
+      .the((data) => {
+        console.log(data);
+        setMovies(data.results);
+      });
+  };
+  useEffect(() => {
+    searchMovies();
+  }, [query]);
 
   const cards = movies.map((element) => (
     <MovieCard
@@ -41,6 +59,7 @@ function App() {
       <Main />
       <div className="container">
         <div className="grid">{cards}</div>
+        <Favourite favourites={favourites} setFavourites={setFavourites} />
       </div>
     </div>
   );

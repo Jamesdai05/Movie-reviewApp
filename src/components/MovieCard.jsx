@@ -33,7 +33,7 @@ const MovieCard = (props) => {
                   className="thumbnail"
                   src={api_img + props.poster}
                   alt="movie"
-                  style={{ width: "14rem" }}
+                  style={{ width: "18rem" }}
                 />
                 <h4>IMDB:{props.voteAverage}</h4>
                 <h5>Release-Date: {props.releaseDate}</h5>
