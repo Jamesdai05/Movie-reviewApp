@@ -43,6 +43,11 @@ body {
   max-height: 50%;
 }
 
-/* button {
-  margin-top: 0.5em;
-} */
+.container .thumbnail {
+  cursor: pointer;
+  transition: 0.7s;
+}
+
+.container .thumbnail:hover {
+  transform: scale(1.08);
+}
