@@ -1,20 +1,41 @@
 import Carousel from "react-bootstrap/Carousel";
+import "../css/Home.css";
+import { useState, useEffect } from "react";
+
+const url =
+  "https://api.themoviedb.org/3/movie/popular?api_key=994bc6246884ded0516faec02291bfa2";
 
 const Home = () => {
+  const api_img = "https://image.tmdb.org/t/p/w500";
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setMovies(data.results);
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
+
   return (
     <Carousel>
-      <Carousel.Item>
-        <img
-          src="https://image.tmdb.org/t/p/w500/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg"
-          text="First Movie"
-          alt="First Movie"
-        />
-        <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
+      {movies.map((element) => (
+        <Carousel.Item key={element.id}>
+          <img
+            src={api_img + element.poster_path}
+            text="First Movie"
+            alt="First Movie"
+          />
+          <Carousel.Caption>
+            <h3>{element.title}</h3>
+            <p>{element.overview}</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+      ))}
+
+      {/* <Carousel.Item>
         <img
           src="https://image.tmdb.org/t/p/w500/rktDFPbfHfUbArZ6OOOKsXcv0Bm.jpg"
           text="Second Movie"
@@ -38,7 +59,7 @@ const Home = () => {
             Praesent commodo cursus magna, vel scelerisque nisl consectetur.
           </p>
         </Carousel.Caption>
-      </Carousel.Item>
+      </Carousel.Item> */}
     </Carousel>
   );
 };
