@@ -38,7 +38,12 @@ const MovieCard = (props) => {
                   alt="movie"
                   style={{ width: "18rem" }}
                 />
-                <h4>IMDB:{props.voteAverage}</h4>
+                <h4>
+                  IMDB:
+                  {props.voteAverage.length >= 3
+                    ? props.voteAverage
+                    : props.voteAverage.toFixed(1)}
+                </h4>
                 <h5>Release-Date: {props.releaseDate}</h5>
                 <div className="description">{props.overview}</div>
               </Modal.Body>

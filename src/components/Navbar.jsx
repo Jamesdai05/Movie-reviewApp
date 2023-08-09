@@ -1,5 +1,5 @@
 import Popular from "./components/Popular";
-import Result from "./components/SearchPage/SearchBar";
+import Search from "./components/SearchPage/SearchBar";
 import Home from "./components/Home";
 import Favourite from "./components/Favourite";
 import Trending from "./components/Trending";
@@ -7,7 +7,7 @@ import Trending from "./components/Trending";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const NavBar = (props) => {
+const NavBar = () => {
   // console.log(props);
   return (
     <div>
@@ -33,14 +33,20 @@ const NavBar = (props) => {
                 Popular
               </Nav.Link>
 
-              <Nav.Link as={Link} to={"/result"} element={<Result />}>
-                Result
+              <Nav.Link as={Link} to={"/search"} element={<Search />}>
+                Search
               </Nav.Link>
-              <Nav.Link as={Link} to={"/Favourite"} element={<Favourite />}>
+              <Nav.Link as={Link} to={"/favourite"} element={<Favourite />}>
                 Favourite
               </Nav.Link>
               <Nav.Link as={Link} to={"/trending"} element={<Trending />}>
                 Trending
+              </Nav.Link>
+            </Nav>
+            <Nav>
+              <Nav.Link href="#deets">Login</Nav.Link>
+              <Nav.Link eventKey={2} href="#memes">
+                Sign Up
               </Nav.Link>
             </Nav>
             {/* <Form className="d-flex" onSubmit={props.handleSubmit}>

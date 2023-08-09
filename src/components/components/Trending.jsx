@@ -36,7 +36,7 @@ const Trending = () => {
           <div className="grid">{cards}</div>
         </div>
       ) : (
-        <h1>Results are not found!Please check the enter is correct.</h1>
+        <h1>Results are loading...</h1>
       )}
     </>
   );
