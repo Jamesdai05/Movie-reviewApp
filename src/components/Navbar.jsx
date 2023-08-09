@@ -4,7 +4,7 @@ import Home from "./components/Home";
 import Favourite from "./components/Favourite";
 import Trending from "./components/Trending";
 
-import { Navbar, Nav, Form, Button, Container } from "react-bootstrap";
+import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const NavBar = (props) => {
