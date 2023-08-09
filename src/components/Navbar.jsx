@@ -1,7 +1,8 @@
 import Popular from "./components/Popular";
-import Result from "./components/Result";
+import Result from "./components/SearchPage/SearchBar";
 import Home from "./components/Home";
 import Favourite from "./components/Favourite";
+import Trending from "./components/Trending";
 
 import { Navbar, Nav, Form, Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -38,8 +39,11 @@ const NavBar = (props) => {
               <Nav.Link as={Link} to={"/Favourite"} element={<Favourite />}>
                 Favourite
               </Nav.Link>
+              <Nav.Link as={Link} to={"/trending"} element={<Trending />}>
+                Trending
+              </Nav.Link>
             </Nav>
-            <Form className="d-flex" onSubmit={props.handleSubmit}>
+            {/* <Form className="d-flex" onSubmit={props.handleSubmit}>
               <Form.Control
                 type="search"
                 placeholder="Enter the movie name"
@@ -52,7 +56,7 @@ const NavBar = (props) => {
               <Button variant="outline-success" type="submit">
                 Search
               </Button>
-            </Form>
+            </Form> */}
           </Navbar.Collapse>
         </Container>
       </Navbar>
