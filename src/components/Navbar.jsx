@@ -18,7 +18,7 @@ const NavBar = () => {
         className="bg-body-tertiary"
       >
         <Container fluid>
-          <Navbar.Brand href="#">Movie Tracking</Navbar.Brand>
+          <Navbar.Brand href="/">Movie Tracking</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
