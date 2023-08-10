@@ -25,3 +25,11 @@ button {
 input:hover {
   background-color: beige;
 }
+
+.genre {
+  margin: 0 auto;
+}
+
+/* .container {
+  background-color: white;
+} */

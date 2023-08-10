@@ -6,6 +6,7 @@ body {
   max-width: 100%;
   margin: 0 auto;
   overflow: hidden;
+  position: fixed;
 }
 
 img {
@@ -17,5 +18,5 @@ img {
   position: relative;
   margin: 0 auto;
   overflow: hidden;
-  /* object-fit: cover; */
+  /* object-fit: contain; */
 }

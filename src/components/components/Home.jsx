@@ -35,7 +35,7 @@ const Home = () => {
           />
           <Carousel.Caption className="container-description">
             <h3>{element.title}</h3>
-            <p>{element.overview}</p>
+            {/* <p>{element.overview}</p> */}
           </Carousel.Caption>
         </Carousel.Item>
       ))}

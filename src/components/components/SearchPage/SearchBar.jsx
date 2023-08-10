@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./Search.css";
 import MovieCard from "../../MovieCard";
+import Genre from "../../Genre";
 
 const Search = () => {
   const [query, setQuery] = useState("");
@@ -45,25 +46,28 @@ const Search = () => {
   return (
     <>
       <h1>Movie Search</h1>
-      <form className="searchbar" onSubmit={searchMovies}>
-        <input
-          type="text"
-          name="movie search"
-          value={query}
-          placeholder="Enter the movie name"
-          onChange={handleChange}
-        />
-        <button type="submit">Search</button>
-      </form>
-      {resulsts.length > 0 ? (
-        <div className="container">
-          <div className="grid">{cards}</div>
-        </div>
-      ) : (
-        <div className="text-center">
-          <h1>Please enter the name of the movie for searching.</h1>
-        </div>
-      )}
+      <div>
+        <Genre />
+        <form className="searchbar" onSubmit={searchMovies}>
+          <input
+            type="text"
+            name="movie search"
+            value={query}
+            placeholder="Enter the movie name"
+            onChange={handleChange}
+          />
+          <button type="submit">Search</button>
+        </form>
+        {resulsts.length > 0 ? (
+          <div className="container">
+            <div className="grid">{cards}</div>
+          </div>
+        ) : (
+          <div className="text-center">
+            <h1>Please enter the name of the movie for searching.</h1>
+          </div>
+        )}
+      </div>
     </>
   );
 };
