@@ -3,6 +3,7 @@ import MovieCard from "../MovieCard";
 
 const url =
   "https://api.themoviedb.org/3/movie/popular?api_key=994bc6246884ded0516faec02291bfa2";
+//base of the poster and image.
 const api_img = "https://image.tmdb.org/t/p/w500";
 
 const Popular = () => {

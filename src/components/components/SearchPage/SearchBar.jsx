@@ -44,7 +44,7 @@ const Search = () => {
 
   return (
     <>
-      <h1>Search Page</h1>
+      <h1>Movie Search</h1>
       <form className="searchbar" onSubmit={searchMovies}>
         <input
           type="text"
