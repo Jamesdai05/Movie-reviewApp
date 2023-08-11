@@ -20,7 +20,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## What I have gained
 
-- React state management(basic part)
+- React state management
 - Knowledge of CSS framework: react-bootstrap and bootstrap.
 
 ## Future developments
