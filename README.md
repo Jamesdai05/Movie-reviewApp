@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 - CSS: Bootstrap and react-bootstrap framework
 - React Library.
-- Material-UI(a part of UI only)
+- Material-UI
 
 ---
 
