@@ -9,6 +9,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const url =
   "https://api.themoviedb.org/3/movie/popular?api_key=994bc6246884ded0516faec02291bfa2";
 
+const ApiKey = process.env.REACT_APP_API_KEY;
+
 function App() {
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
@@ -28,7 +30,7 @@ function App() {
     makeApiCall();
   }, []);
   // for search bar
-  const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=994bc6246884ded0516faec02291bfa2&query=${query}`;
+  const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${ApiKey}&query=${query}`;
   const searchMovies = (e) => {
     console.log("Searching");
     e.preventDefault();
