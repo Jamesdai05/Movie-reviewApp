@@ -1,5 +1,13 @@
+/* Target html and body to 100% height  */
+html,body {
+  height:100%;
+  width:100%;
+  margin:0;
+}
+
 body {
   background-color: black;
+  height:100vh;
 }
 
 .carousel-container {
@@ -14,7 +22,7 @@ img {
   justify-content: center;
   align-items: center;
   max-width: 100%;
-  max-height: 100%;
+  max-height: 80%;
   position: relative;
   margin: 0 auto;
   overflow: hidden;
