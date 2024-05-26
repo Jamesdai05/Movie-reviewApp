@@ -1,6 +1,7 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Movie Home](public/movie.png)
 
 ## Technologies
 
@@ -13,7 +14,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 - To create a simple SPA of movie search app by using TMDB API.
 
-## Changllenges
+## Challenges
 
 - How to pass the data between the siblings component.(For example, the favourite movie data from different page(state change),and create the favourite component);
 
