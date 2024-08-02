@@ -6,16 +6,13 @@ import { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 // import Favourite from "./components/components/Favourite";
 
-const url =
-  "https://api.themoviedb.org/3/movie/popular?api_key=994bc6246884ded0516faec02291bfa2";
-
 const ApiKey = process.env.REACT_APP_API_KEY;
+
+const url = `https://api.themoviedb.org/3/movie/popular?api_key=${ApiKey}`;
 
 function App() {
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
-
-  // const [favourites, setFavourites] = useState([]);
 
   const makeApiCall = () => {
     fetch(url)
@@ -45,11 +42,6 @@ function App() {
       console.log(e);
     }
   };
-  // try {
-  //   searchMovies();
-  // } catch (e) {
-  //   console.log(e);
-  // }
 
   const handleChange = (e) => {
     console.log("change is running");
