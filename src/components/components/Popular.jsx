@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
 import MovieCard from "../MovieCard";
 
-// const API_Key = process.env.REACT_APP_API_KEY;
-
-const url =
-  "https://api.themoviedb.org/3/movie/popular?api_key=994bc6246884ded0516faec02291bfa2";
+const apiKey = process.env.REACT_APP_API_KEY;
+const url = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`;
 //base of the poster and image.
 const api_img = "https://image.tmdb.org/t/p/w500";
 
