@@ -2,11 +2,14 @@ import Carousel from "react-bootstrap/Carousel";
 import "../css/Home.css";
 import { useState, useEffect } from "react";
 
-const url =
-  "https://api.themoviedb.org/3/movie/popular?api_key=994bc6246884ded0516faec02291bfa2";
+const apiKey = process.env.REACT_APP_API_KEY;
+const url = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`;
 
 const style = {
-  width: "800px",
+  width: "45vw",
+  height: "93.5vh",
+  overflow: "hidden",
+  // marginTop: "2em",
 };
 
 const Home = () => {
@@ -18,10 +21,13 @@ const Home = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        setMovies(data.results);
+        // const result = data.slice(1, 6);
+        setMovies(data.results.slice(1, 11));
       })
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
+
+  // const style={height:80%}
 
   return (
     <Carousel className="carousel-container">
