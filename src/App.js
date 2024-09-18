@@ -2,9 +2,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Main from "./components/Main";
 import { useState, useEffect } from "react";
-// import MovieCard from "./components/MovieCard";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import Favourite from "./components/components/Favourite";
 
 const ApiKey = process.env.REACT_APP_API_KEY;
 
