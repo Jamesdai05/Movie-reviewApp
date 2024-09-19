@@ -2,8 +2,8 @@ import { Chip } from "@mui/material";
 import { useEffect, useState } from "react";
 
 const Genre = () => {
-  const url =
-    "https://api.themoviedb.org/3/genre/movie/list?language=en&api_key=994bc6246884ded0516faec02291bfa2";
+  const apiKey = process.env.REACT_APP_API_KEY;
+  const url = `https://api.themoviedb.org/3/genre/movie/list?language=en&api_key=${apiKey}`;
 
   const [genre, setGenre] = useState([]);
   const makeApiCall = () => {

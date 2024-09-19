@@ -52,3 +52,34 @@ body {
 .container .thumbnail:hover {
   transform: scale(1.08);
 }
+
+.paginationBttns {
+  width: 80%;
+  height: 35px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+  bottom: -10px;
+}
+
+.paginationBttns a {
+  color: #2b2eff;
+  border: 2px solid #2b2eff;
+  padding: 8px;
+  margin: 0.5em 0.8em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.paginationBttns a:hover {
+  color: white;
+  background-color: #2b2eff;
+  font-weight: 400;
+}
+
+.paginationActive a {
+  color: white;
+  background-color: #2b2eff;
+}

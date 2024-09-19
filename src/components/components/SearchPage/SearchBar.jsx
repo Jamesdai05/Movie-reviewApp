@@ -5,30 +5,31 @@ import Genre from "../../Genre";
 
 const Search = () => {
   const [query, setQuery] = useState("");
-  const [resulsts, setResults] = useState([]);
+  const [results, setResults] = useState([]);
+  const apiKey = process.env.REACT_APP_API_KEY;
 
-  const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=994bc6246884ded0516faec02291bfa2&query=${query}`;
+  const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query}`;
 
-  const searchMovies = (e) => {
+  const handleMoviesSearch = (e) => {
     console.log("Searching");
-    e.preventDefault();
-    try {
-      fetch(searchUrl)
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          setResults(data.results);
-        });
-    } catch (e) {
-      console.log(e);
-    }
+    // e.preventDefault();
+    // try {
+    //   fetch(searchUrl)
+    //     .then((res) => res.json())
+    //     .then((data) => {
+    //       console.log(data);
+    //       setResults(data.results);
+    //     });
+    // } catch (err) {
+    //   console.log(err);
+    // }
   };
 
-  // useEffect(() => {
-  //   searchMovies();
-  // }, [query]);
+  useEffect(() => {
+    handleMoviesSearch();
+  }, []);
 
-  const cards = resulsts.map((element) => (
+  const cards = results.map((element) => (
     <MovieCard
       key={element.id}
       poster={element.poster_path}
@@ -48,7 +49,7 @@ const Search = () => {
       <h1>Movie Search</h1>
       <div>
         <Genre />
-        <form className="searchbar" onSubmit={searchMovies}>
+        <form className="searchbar" onSubmit={handleMoviesSearch}>
           <input
             type="text"
             name="movie search"
@@ -58,7 +59,7 @@ const Search = () => {
           />
           <button type="submit">Search</button>
         </form>
-        {resulsts.length > 0 ? (
+        {results.length > 0 ? (
           <div className="container">
             <div className="grid">{cards}</div>
           </div>
