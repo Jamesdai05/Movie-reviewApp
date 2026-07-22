@@ -21,7 +21,7 @@ const Genre = () => {
 
   useEffect(() => {
     makeApiCall();
-  }, [genre]);
+  }, []);
 
   const genres = genre.map((ele) => (
     <Chip label={ele.name} key={ele.id} name={ele.name} color="secondary" />

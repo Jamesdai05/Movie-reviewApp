@@ -1,11 +1,11 @@
-import Popular from "./components/Popular";
-import Search from "./components/SearchPage/SearchBar";
-import Home from "./components/Home";
-import Favourite from "./components/Favourite";
-import Trending from "./components/Trending";
+import Popular from "../pages/Popular"
+import Home from "../pages/Home";
+import Favourite from "../pages/Favourite";
+import Trending from "../pages/Trending";
 
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import SearchPage from "../pages/SearchPage";
 
 const NavBar = () => {
   // console.log(props);
@@ -33,7 +33,7 @@ const NavBar = () => {
                 Popular
               </Nav.Link>
 
-              <Nav.Link as={Link} to={"/search"} element={<Search />}>
+              <Nav.Link as={Link} to={"/search"} element={<SearchPage />}>
                 Search
               </Nav.Link>
               <Nav.Link as={Link} to={"/favourite"} element={<Favourite />}>
@@ -44,8 +44,8 @@ const NavBar = () => {
               </Nav.Link>
             </Nav>
             <Nav>
-              <Nav.Link href="#deets">Login</Nav.Link>
-              <Nav.Link eventKey={2} href="#memes">
+              <Nav.Link as={Link} to="/login">Login</Nav.Link>
+              <Nav.Link as={Link} to="/register">
                 Sign Up
               </Nav.Link>
             </Nav>

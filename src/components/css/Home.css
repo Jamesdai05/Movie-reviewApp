@@ -1,30 +1,49 @@
 /* Target html and body to 100% height  */
-html,body {
-  height:100%;
-  width:100%;
-  margin:0;
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
 }
 
 body {
   background-color: black;
-  height:100vh;
+  height: 1grey00vh;
 }
 
-.carousel-container {
-  max-width: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-  position: fixed;
-}
-
-img {
+.home-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 100%;
-  max-height: 80%;
-  position: relative;
+  height: calc(100vh - 60px);
+  width: 100%;
+  background-color: #BBD5DA;
+}
+
+.carousel-container {
+  max-width: 45vw;
   margin: 0 auto;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
 
+.carousel-container .carousel-inner {
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.carousel-container .carousel-caption {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 0 0 8px 8px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 15px;
 }
