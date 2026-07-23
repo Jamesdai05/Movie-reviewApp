@@ -22,7 +22,7 @@ const Home = () => {
 
     return (
         <div className="home-wrapper">
-            <Carousel className="carousel-container">
+            <Carousel className="carousel-container" fade>
                 {movies.map((element) => (
                     <Carousel.Item key={element.id}>
                         <img

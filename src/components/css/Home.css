@@ -22,9 +22,7 @@ body {
 .carousel-container {
   max-width: 45vw;
   margin: 0 auto;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
+  position: relative;
 }
 
 .carousel-container .carousel-inner {
@@ -32,9 +30,34 @@ body {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
-img {
+/* Fade transition styles — prevents horizontal sliding */
+.carousel-fade .carousel-item {
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.carousel-fade .carousel-item.active {
+  opacity: 1;
+  position: relative;
+}
+
+/* Override Bootstrap's slide transform */
+.carousel-container .carousel-item-next.carousel-item-left,
+.carousel-container .carousel-item-prev.carousel-item-right,
+.carousel-container .carousel-item-next,
+.carousel-container .carousel-item-prev,
+.carousel-container .carousel-item.active {
+  transform: translateX(0) !important;
+}
+
+/* Let images keep their natural aspect ratio — no forced resizing */
+.carousel-container img {
   display: block;
-  max-width: 100%;
+  width: 100%;
   height: auto;
   margin: 0 auto;
 }
