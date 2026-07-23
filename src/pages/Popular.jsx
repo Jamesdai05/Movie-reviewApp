@@ -2,9 +2,10 @@ import { useState, useEffect } from "react";
 import MovieCard from "../components/MovieCard";
 import ReactPaginate from "react-paginate";
 import axios from "axios";
+import Loader from "../components/components/Loader";
 
 const apiKey = process.env.REACT_APP_API_KEY;
-const token = process.env.REACT_API_TOKEN;
+// const token = process.env.REACT_API_TOKEN;
 const url = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`;
 //base of the poster and image.
 // const api_img = "https://image.tmdb.org/t/p/w500";
@@ -56,6 +57,7 @@ const Popular = () => {
     const fetchData = async () => {
         setLoading(true);
         try {
+            // this the one which is using the api to set the pagination
             const page1 = axios.get(`${url}&page=1`);
             const page2 = axios.get(`${url}&page=2`);
             const page3 = axios.get(`${url}&page=3`);
@@ -96,7 +98,7 @@ const Popular = () => {
             setPopulars(allMovies);
         } catch (error) {
             console.log(error);
-            setError("error");
+            setError("error:",error.message);
         } finally {
             setLoading(false);
         }
@@ -124,6 +126,8 @@ const Popular = () => {
         setPageNumber(selected);
     };
 
+    if (loading) return <Loader />;
+
     return (
         <>
             <h1>Popular</h1>
@@ -132,7 +136,7 @@ const Popular = () => {
                     <div className="grid">{cards}</div>
                 </div>
             ) : (
-                <h1>Results are not found!Please check the enter is correct.</h1>
+                <h1>Results are not found!Please check the input is correct.</h1>
             )}
             {currentItems.length > 0 && (
                 <ReactPaginate
@@ -145,6 +149,8 @@ const Popular = () => {
                     activeClassName={"paginationActive"}
                 />
             )}
+
+            <p>{error && error.message?.error}</p>
         </>
     );
 };
