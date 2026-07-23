@@ -6,8 +6,8 @@ html, body {
 }
 
 body {
-  background-color: black;
-  height: 1grey00vh;
+  /* background-color: black; */
+  height: 100vh;
 }
 
 .home-wrapper {
